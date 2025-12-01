@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { EncryptedText } from '@/components/ui/encrypted-text';
+import { EncryptedText } from './ui/encrypted-text';
 
 const Hero = () => {
     const textVariants = {
