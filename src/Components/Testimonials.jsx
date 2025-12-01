@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { BackgroundBeamsWithCollision } from '@/components/ui/background-beams-with-collision'
+import { BackgroundBeamsWithCollision } from './ui/background-beams-with-collision'
 
 const reviews = [
     {

@@ -1,5 +1,5 @@
 import React from 'react'
-import { BackgroundLines } from '../components/ui/background-lines'
+import { BackgroundLines } from './ui/background-lines'
 
 const Myself = () => {
     return (
