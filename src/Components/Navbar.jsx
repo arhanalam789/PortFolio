@@ -70,8 +70,8 @@ const Navbar = () => {
                     </ul>
 
                     <div className="flex flex-col items-center px-6">
-                        <span className="text-red-600 text-[10px] tracking-widest uppercase mb-[-2px]">Portfolio</span>
-                        <Link to="/" className="text-2xl font-bold tracking-wider text-white">ARHAN</Link>
+                        <img src="/logo.svg" alt="Arhan Logo" className="w-8 h-8 mb-1" />
+                        <Link to="/" className="text-xl font-bold tracking-wider text-white">ARHAN</Link>
                     </div>
 
                     <ul className="flex items-center gap-4 md:gap-8 flex-1 justify-end">
