@@ -61,7 +61,7 @@ const Navbar = () => {
                                         stroke="currentColor"
                                         strokeWidth="2"
                                         fill="none"
-                                        className="text-red-600"
+                                        className="text-neutral-600"
                                         strokeLinecap="round"
                                     />
                                 </svg>
@@ -94,7 +94,7 @@ const Navbar = () => {
                                         stroke="currentColor"
                                         strokeWidth="2"
                                         fill="none"
-                                        className="text-red-600"
+                                        className="text-neutral-600"
                                         strokeLinecap="round"
                                     />
                                 </svg>

@@ -13,7 +13,7 @@ const timelineData = [
                 tech: ['Next.js', 'Node.js', 'Express', 'MongoDB', 'Firebase', 'Tailwind CSS'],
                 image: '/projects/gymlogix.png',
                 icon: <Dumbbell className="w-6 h-6" />,
-                color: 'bg-red-600',
+                color: 'bg-neutral-600',
                 liveDemo: 'https://gym-logix.vercel.app/',
                 github: 'https://github.com/arhanalam789/GymLogix'
             }
@@ -29,7 +29,7 @@ const timelineData = [
                 tech: ['React', 'Framer Motion', 'Tailwind CSS', 'Vite'],
                 image: '/projects/redwhisk.png',
                 icon: <Globe className="w-6 h-6" />,
-                color: 'bg-red-700',
+                color: 'bg-neutral-500',
                 liveDemo: 'https://redwhisk.media/',
                 github: 'https://github.com/redwhiskofficial/RedWhisk.Web'
             },
@@ -40,7 +40,7 @@ const timelineData = [
                 tech: ['React.js', 'Node.js', 'Express', 'MongoDB', 'AWS S3', 'JWT'],
                 image: '/projects/tunehive-user.png',
                 icon: <Music className="w-6 h-6" />,
-                color: 'bg-red-800',
+                color: 'bg-neutral-600',
                 liveDemo: 'https://tune-hive-six.vercel.app/',
                 github: 'https://github.com/arhanalam789/TuneHive'
             }
@@ -59,13 +59,13 @@ const TimelineProject = ({ project, index, isEven }) => {
                 viewport={{ once: true }}
                 className="flex-1 w-full"
             >
-                <div className="bg-neutral-900/50 border border-neutral-800 rounded-3xl p-6 md:p-8 hover:border-red-500/50 transition-all group">
+                <div className="bg-neutral-900/50 border border-neutral-800 rounded-3xl p-6 md:p-8 hover:border-neutral-500/50 transition-all group">
                     <div className="flex items-center gap-4 mb-6">
-                        <div className={`p-3 rounded-2xl ${project.color} text-white shadow-lg shadow-red-900/40 group-hover:scale-110 transition-transform`}>
+                        <div className={`p-3 rounded-2xl ${project.color} text-white shadow-lg shadow-neutral-800/40 group-hover:scale-110 transition-transform`}>
                             {project.icon}
                         </div>
                         <div>
-                            <h3 className="text-2xl font-bold text-white group-hover:text-red-500 transition-colors">{project.title}</h3>
+                            <h3 className="text-2xl font-bold text-white group-hover:text-neutral-500 transition-colors">{project.title}</h3>
                             <p className="text-neutral-500 text-sm">{project.company}</p>
                         </div>
                     </div>
@@ -87,7 +87,7 @@ const TimelineProject = ({ project, index, isEven }) => {
                             href={project.liveDemo}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center gap-2 px-4 py-2 bg-red-800 hover:bg-red-700 text-white rounded-xl transition-colors text-sm font-medium"
+                            className="flex items-center gap-2 px-4 py-2 bg-neutral-800 hover:bg-neutral-700 text-white rounded-xl transition-colors text-sm font-medium"
                         >
                             <ExternalLink className="w-4 h-4" /> Live Demo
                         </a>
@@ -119,7 +119,7 @@ const TimelineProject = ({ project, index, isEven }) => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-60 pointer-events-none" />
 
-                    <div className="absolute bottom-6 right-6 p-4 rounded-full bg-red-800/10 backdrop-blur-md border border-red-800/30 text-red-500 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div className="absolute bottom-6 right-6 p-4 rounded-full bg-neutral-800/10 backdrop-blur-md border border-neutral-800/30 text-neutral-500 opacity-0 group-hover:opacity-100 transition-opacity">
                         <Rocket className="w-6 h-6 animate-pulse" />
                     </div>
                 </div>
@@ -141,7 +141,7 @@ const Timeline = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
                         viewport={{ once: true }}
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-red-900/30 bg-red-900/10 text-red-500 mb-6"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-800/30 bg-neutral-800/10 text-neutral-500 mb-6"
                     >
                         <Calendar className="w-4 h-4" />
                         <span className="text-sm font-semibold tracking-wider uppercase">My Journey</span>
@@ -153,14 +153,14 @@ const Timeline = () => {
                         viewport={{ once: true }}
                         className="text-4xl md:text-6xl font-black text-center text-white mb-6 tracking-tighter"
                     >
-                        EVOLUTION OF <span className="text-red-800">CRAFT</span>
+                        EVOLUTION OF <span className="text-neutral-500">CRAFT</span>
                     </motion.h2>
                     <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: 100 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
                         viewport={{ once: true }}
-                        className="h-1.5 bg-red-800 rounded-full mb-8"
+                        className="h-1.5 bg-neutral-600 rounded-full mb-8"
                     />
                     <motion.p
                         initial={{ opacity: 0 }}
@@ -174,7 +174,7 @@ const Timeline = () => {
                 </div>
 
                 {/* Central Connecting Line */}
-                <div className="hidden md:block absolute left-1/2 top-[350px] bottom-0 w-px bg-gradient-to-b from-red-800/50 via-neutral-800 to-transparent -translate-x-1/2 z-0" />
+                <div className="hidden md:block absolute left-1/2 top-[350px] bottom-0 w-px bg-gradient-to-b from-neutral-800/50 via-neutral-800 to-transparent -translate-x-1/2 z-0" />
 
                 {/* Timeline Items */}
                 <div className="relative z-10">
@@ -182,8 +182,8 @@ const Timeline = () => {
                         <div key={groupIdx} className="relative mb-32 last:mb-0">
                             {/* Year Marker */}
                             <div className="flex justify-center mb-16 relative z-20">
-                                <div className="px-8 py-3 rounded-full border border-red-800/30 bg-neutral-900 text-red-500 font-bold text-xl shadow-2xl shadow-red-950/40 relative group overflow-hidden">
-                                    <div className="absolute inset-0 bg-red-800/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+                                <div className="px-8 py-3 rounded-full border border-neutral-800/30 bg-neutral-900 text-neutral-500 font-bold text-xl shadow-2xl shadow-neutral-900/40 relative group overflow-hidden">
+                                    <div className="absolute inset-0 bg-neutral-800/10 opacity-0 group-hover:opacity-100 transition-opacity" />
                                     <span className="relative z-10">{group.year}</span>
                                 </div>
                             </div>
@@ -215,19 +215,19 @@ const Timeline = () => {
                     viewport={{ once: true }}
                     className="mt-32 p-8 md:p-12 rounded-3xl border border-neutral-800 bg-neutral-900/30 text-center relative overflow-hidden group z-10"
                 >
-                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-red-800 to-transparent opacity-50" />
+                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-neutral-600 to-transparent opacity-50" />
                     <div className="relative z-10">
                         <h3 className="text-3xl font-bold text-white mb-4">The journey continues...</h3>
                         <p className="text-neutral-500 mb-8 max-w-xl mx-auto">Currently open for new opportunities and collaborations on exciting projects.</p>
                         <a
                             href="/resume.pdf"
                             download
-                            className="px-8 py-4 bg-red-800 hover:bg-red-700 text-white rounded-2xl font-bold transition-all hover:scale-105 shadow-xl shadow-red-900/20 inline-block"
+                            className="px-8 py-4 bg-neutral-600 hover:bg-neutral-500 text-white rounded-2xl font-bold transition-all hover:scale-105 shadow-xl shadow-neutral-800/20 inline-block"
                         >
                             Let's Build Something Great
                         </a>
                     </div>
-                    <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-red-900/10 rounded-full blur-3xl group-hover:bg-red-800/20 transition-colors duration-700" />
+                    <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-neutral-800/10 rounded-full blur-3xl group-hover:bg-neutral-600/20 transition-colors duration-700" />
                 </motion.div>
             </div>
         </section>

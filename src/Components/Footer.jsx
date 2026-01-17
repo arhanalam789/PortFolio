@@ -15,7 +15,7 @@ const Footer = () => {
                         LET'S WORK
                     </h2>
                     <div className="flex justify-center md:justify-start md:pl-40 -mt-4 md:-mt-12 relative z-20">
-                        <span className="text-6xl md:text-[10rem] text-red-700 font-['Sacramento']">
+                        <span className="text-6xl md:text-[10rem] text-neutral-500 font-['Sacramento']">
                             Together !
                         </span>
                     </div>
@@ -35,7 +35,7 @@ const Footer = () => {
                                 </svg>
                             </div>
                             <div className="absolute inset-0 flex items-center justify-center">
-                                <ArrowUpRight className="w-10 h-10 text-red-800" />
+                                <ArrowUpRight className="w-10 h-10 text-neutral-600" />
                             </div>
                         </a>
                     </div>

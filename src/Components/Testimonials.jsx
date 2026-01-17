@@ -58,10 +58,10 @@ const Testimonials = () => {
                             transition={{ duration: 0.5, ease: "easeOut" }}
                             className="self-end flex items-end gap-4 max-w-2xl"
                         >
-                            <div className="bg-neutral-900 border border-neutral-800 rounded-3xl rounded-br-none p-6 text-xl text-neutral-200 shadow-lg shadow-red-900/10">
+                            <div className="bg-neutral-900 border border-neutral-800 rounded-3xl rounded-br-none p-6 text-xl text-neutral-200 shadow-lg shadow-neutral-900/10">
                                 <p>Hey guys! How was your experience working with me?</p>
                             </div>
-                            <div className="w-12 h-12 rounded-full bg-red-600 overflow-hidden border-2 border-black shrink-0">
+                            <div className="w-12 h-12 rounded-full bg-neutral-600 overflow-hidden border-2 border-black shrink-0">
                                 <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Arhan" alt="Me" className="w-full h-full object-cover" />
                             </div>
                         </motion.div>

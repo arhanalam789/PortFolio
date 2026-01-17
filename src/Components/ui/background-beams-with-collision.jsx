@@ -173,7 +173,7 @@ const CollisionMechanism = React.forwardRef(({ parentRef, containerRef, beamOpti
           repeatDelay: beamOptions.repeatDelay || 0,
         }}
         className={cn(
-          "absolute left-0 top-20 m-auto h-14 w-px rounded-full bg-gradient-to-t from-red-500 via-red-800 to-transparent",
+          "absolute left-0 top-20 m-auto h-14 w-px rounded-full bg-gradient-to-t from-neutral-500 via-neutral-800 to-transparent",
           beamOptions.className
         )} />
       <AnimatePresence>
@@ -212,7 +212,7 @@ const Explosion = ({
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
-        className="absolute -inset-x-10 top-0 m-auto h-2 w-10 rounded-full bg-gradient-to-r from-transparent via-red-500 to-transparent blur-sm"></motion.div>
+        className="absolute -inset-x-10 top-0 m-auto h-2 w-10 rounded-full bg-gradient-to-r from-transparent via-neutral-500 to-transparent blur-sm"></motion.div>
       {spans.map((span) => (
         <motion.span
           key={span.id}
@@ -223,7 +223,7 @@ const Explosion = ({
             opacity: 0,
           }}
           transition={{ duration: Math.random() * 1.5 + 0.5, ease: "easeOut" }}
-          className="absolute h-1 w-1 rounded-full bg-gradient-to-b from-red-500 to-red-800" />
+          className="absolute h-1 w-1 rounded-full bg-gradient-to-b from-neutral-500 to-neutral-800" />
       ))}
     </div>
   );

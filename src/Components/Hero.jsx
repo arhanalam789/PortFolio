@@ -42,8 +42,8 @@ const Hero = () => {
     return (
         <section id="home" className="min-h-screen flex items-center justify-center px-8 pt-20 overflow-hidden relative">
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
-                <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-red-900/20 rounded-full blur-[120px]" />
-                <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-red-900/20 rounded-full blur-[120px]" />
+                <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-neutral-800/20 rounded-full blur-[120px]" />
+                <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-neutral-800/20 rounded-full blur-[120px]" />
             </div>
 
             <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -58,7 +58,7 @@ const Hero = () => {
                         <h2 className="text-6xl md:text-8xl font-bold tracking-tighter text-white leading-[0.9]">
                             <EncryptedText
                                 text="HEY, I'M ARHAN ALAM"
-                                className="text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-red-600"
+                                className="text-transparent bg-clip-text bg-gradient-to-r from-neutral-600 to-neutral-400"
                                 revealDelayMs={80}
                                 flipDelayMs={50}
                                 startDelay={800}
@@ -71,7 +71,7 @@ const Hero = () => {
                         className="relative"
                     >
                         <motion.h3
-                            className="text-5xl md:text-6xl font-['Sacramento'] text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-700 to-red-900"
+                            className="text-5xl md:text-6xl font-['Sacramento'] text-transparent bg-clip-text bg-gradient-to-r from-neutral-400 via-neutral-600 to-neutral-800"
                             animate={{
                                 backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
                             }}
@@ -85,7 +85,7 @@ const Hero = () => {
                             a Web Developer
                         </motion.h3>
                         <motion.div
-                            className="absolute -inset-1 bg-gradient-to-r from-red-600 to-red-900 rounded-lg blur opacity-20"
+                            className="absolute -inset-1 bg-gradient-to-r from-neutral-600 to-neutral-800 rounded-lg blur opacity-20"
                             animate={{
                                 opacity: [0.2, 0.4, 0.2],
                             }}

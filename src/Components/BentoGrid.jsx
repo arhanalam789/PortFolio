@@ -70,7 +70,7 @@ const BentoGrid = () => {
                             <a
                                 href="/resume.pdf"
                                 download
-                                className="w-full bg-red-800 hover:bg-red-900 text-white font-bold py-3 px-6 rounded-xl flex items-center justify-center gap-2 transition-colors"
+                                className="w-full bg-neutral-800 hover:bg-neutral-900 text-white font-bold py-3 px-6 rounded-xl flex items-center justify-center gap-2 transition-colors"
                             >
                                 Download for free
                                 <span className="text-lg">😁</span>
