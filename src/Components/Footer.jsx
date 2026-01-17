@@ -7,7 +7,7 @@ const Footer = () => {
     }
 
     return (
-        <footer className="w-full bg-black text-white pt-20 pb-8 px-6 md:px-20 overflow-hidden relative">
+        <footer id="contact" className="w-full bg-black text-white pt-20 pb-8 px-6 md:px-20 overflow-hidden relative">
             <div className="max-w-7xl mx-auto flex flex-col gap-16">
 
                 <div className="relative">

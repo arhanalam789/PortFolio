@@ -40,7 +40,7 @@ const Hero = () => {
     };
 
     return (
-        <section className="min-h-screen flex items-center justify-center px-8 pt-20 overflow-hidden relative">
+        <section id="home" className="min-h-screen flex items-center justify-center px-8 pt-20 overflow-hidden relative">
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
                 <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-red-900/20 rounded-full blur-[120px]" />
                 <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-red-900/20 rounded-full blur-[120px]" />

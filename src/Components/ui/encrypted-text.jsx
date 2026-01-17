@@ -43,7 +43,7 @@ export const EncryptedText = ({
   useEffect(() => {
     if (!isInView) return;
 
-    // Reset state for a fresh animation whenever dependencies change
+    
     const initial = text
       ? generateGibberishPreservingSpaces(text, charset)
       : "";
@@ -59,7 +59,7 @@ export const EncryptedText = ({
 
       const elapsedMs = now - startTimeRef.current - startDelay;
 
-      // Don't start revealing until after the delay
+      
       if (elapsedMs < 0) {
         animationFrameRef.current = requestAnimationFrame(update);
         return;
@@ -74,7 +74,7 @@ export const EncryptedText = ({
         return;
       }
 
-      // Re-randomize unrevealed scramble characters on an interval
+      
       const timeSinceLastFlip = now - lastFlipTimeRef.current;
       if (timeSinceLastFlip >= Math.max(0, flipDelayMs)) {
         for (let index = 0; index < totalLength; index += 1) {
