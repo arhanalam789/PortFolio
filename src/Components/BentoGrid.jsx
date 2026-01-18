@@ -11,14 +11,9 @@ const BentoGrid = () => {
                     <img
                         src="/IMG_3082.jpeg"
                         alt="Arhan Alam"
-                        className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 group-hover:opacity-0"
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
-                    <img
-                        src="/second.jpeg"
-                        alt="Arhan Alam Secondary"
-                        className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700 group-hover:opacity-100 scale-110 group-hover:scale-100 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 </div>
 
 
@@ -60,9 +55,16 @@ const BentoGrid = () => {
                             </div>
 
 
-                            <div className="bg-neutral-900/50 border border-neutral-800 rounded-3xl p-6 flex flex-col justify-center gap-2">
-                                <span className="text-neutral-500 text-sm">Buffering in</span>
-                                <h3 className="text-xl font-semibold">Delhi NCR</h3>
+                            <div className="relative group overflow-hidden rounded-3xl border border-neutral-800 bg-neutral-900/50 h-[180px]">
+                                <img
+                                    src="/second.jpeg"
+                                    alt="Arhan Alam Life"
+                                    className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-110 group-hover:scale-100"
+                                />
+                                <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
+                                <div className="absolute bottom-4 left-4">
+                                    <span className="text-white/70 text-[10px] uppercase tracking-widest font-bold">Based in Delhi NCR</span>
+                                </div>
                             </div>
                         </div>
 
