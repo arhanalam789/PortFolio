@@ -74,7 +74,7 @@ const Footer = () => {
                 </div>
 
                 <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-neutral-800">
-                    <p className="text-neutral-500 text-sm">Copyright 2025 by Arhan Alam</p>
+                    <p className="text-neutral-500 text-sm">Copyright 2026 by Arhan Alam</p>
                     <h3 className="text-2xl font-bold tracking-wider">ARHAN</h3>
                     <button
                         onClick={scrollToTop}

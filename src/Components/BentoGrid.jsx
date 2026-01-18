@@ -11,11 +11,14 @@ const BentoGrid = () => {
                     <img
                         src="/IMG_3082.jpeg"
                         alt="Arhan Alam"
-                        className="absolute inset-0 w-full h-full object-cover"
+                        className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 group-hover:opacity-0"
                     />
-                    <div className="absolute bottom-6 left-6 right-6 text-center bg-black/50 backdrop-blur-sm rounded-xl p-3">
-
-                    </div>
+                    <img
+                        src="/second.jpeg"
+                        alt="Arhan Alam Secondary"
+                        className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700 group-hover:opacity-100 scale-110 group-hover:scale-100 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
 
 
