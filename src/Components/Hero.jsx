@@ -107,7 +107,7 @@ const Hero = () => {
 
                         <div className="relative w-[300px] h-[400px] md:w-[400px] md:h-[550px] rounded-[2rem] overflow-hidden border border-neutral-800/50 backdrop-blur-sm shadow-2xl">
                             <img
-                                src="/IMG_3082.jpeg"
+                                src="/third.jpeg"
                                 alt="Arhan Alam Profile"
                                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
                             />
