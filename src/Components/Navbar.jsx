@@ -1,11 +1,14 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useRef } from 'react';
+import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
+import { cn } from '../lib/utils';
 
 const Navbar = () => {
     const location = useLocation();
     const isHomePage = location.pathname === '/';
     const isResumePage = location.pathname === '/resume';
+
+    const [hoveredLink, setHoveredLink] = useState(null);
 
     if (isResumePage) return null;
 
@@ -13,8 +16,7 @@ const Navbar = () => {
         { name: 'Home', href: '/#home', scrollId: 'home' },
         { name: 'About', href: '/#about', scrollId: 'about' },
         { name: 'Projects', href: '/#projects', scrollId: 'projects' },
-        { name: 'Resume', href: '/resume', isPage: true },
-        { name: 'Contact', href: '/#contact', scrollId: 'contact' }
+        { name: 'Resume', href: '/resume', isPage: true }
     ];
 
     const handleClick = (e, link) => {
@@ -27,84 +29,77 @@ const Navbar = () => {
         }
     };
 
+    const NavLink = ({ link, index }) => (
+        <li
+            onMouseEnter={() => setHoveredLink(link.name)}
+            onMouseLeave={() => setHoveredLink(null)}
+            className="relative"
+        >
+            <Link
+                to={link.href}
+                onClick={(e) => handleClick(e, link)}
+                className={cn(
+                    "relative z-10 px-4 py-2 text-sm font-medium transition-colors duration-300 rounded-full",
+                    hoveredLink === link.name ? "text-white" : "text-neutral-400"
+                )}
+            >
+                {link.name}
+            </Link>
+            {hoveredLink === link.name && (
+                <motion.div
+                    layoutId="navbar-highlight"
+                    className="absolute inset-0 z-0 bg-neutral-800/80 rounded-full"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 30
+                    }}
+                />
+            )}
+        </li>
+    );
+
     return (
         <motion.div
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{
-                type: "spring",
-                stiffness: 100,
-                damping: 10,
-                delay: 0.5
-            }}
-            className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-6 px-4 md:px-6"
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="fixed top-0 left-0 right-0 z-[100] flex justify-center pt-6 px-4"
         >
-            <nav className="bg-neutral-900/95 backdrop-blur-md border-2 border-neutral-800 rounded-2xl px-4 md:px-8 py-4 shadow-2xl w-full max-w-4xl">
-                <div className="flex items-center justify-between">
-                    <ul className="hidden md:flex items-center gap-8 flex-1 justify-start">
-                        {navLinks.slice(0, 2).map((link) => (
-                            <li key={link.name} className="relative group">
-                                <Link
-                                    to={link.href}
-                                    onClick={(e) => handleClick(e, link)}
-                                    className="text-neutral-300 hover:text-white text-base font-medium transition-colors duration-200"
-                                >
-                                    {link.name}
-                                </Link>
-                                <svg
-                                    className="absolute -bottom-1 left-0 w-full h-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-                                    viewBox="0 0 100 8"
-                                    preserveAspectRatio="none"
-                                >
-                                    <path
-                                        d="M 0 4 Q 25 2, 50 4 T 100 4"
-                                        stroke="currentColor"
-                                        strokeWidth="2"
-                                        fill="none"
-                                        className="text-neutral-600"
-                                        strokeLinecap="round"
-                                    />
-                                </svg>
-                            </li>
-                        ))}
-                    </ul>
+            <nav className="relative bg-black/60 backdrop-blur-xl border border-white/5 rounded-full px-6 py-2 shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex items-center gap-2">
 
-                    <div className="flex flex-col items-center px-6">
-                        <img src="/logo.svg" alt="Arhan Logo" className="w-8 h-8 mb-1" />
-                        <Link to="/" className="text-xl font-bold tracking-wider text-white">ARHAN</Link>
-                    </div>
+                {/* Left Links */}
+                <ul className="hidden md:flex items-center gap-1">
+                    {navLinks.slice(0, 2).map((link, idx) => (
+                        <NavLink key={link.name} link={link} index={idx} />
+                    ))}
+                </ul>
 
-                    <ul className="flex items-center gap-4 md:gap-8 flex-1 justify-end">
-                        {navLinks.slice(2).map((link) => (
-                            <li key={link.name} className="relative group">
-                                <Link
-                                    to={link.href}
-                                    onClick={(e) => handleClick(e, link)}
-                                    className="text-neutral-300 hover:text-white text-sm md:text-base font-medium transition-colors duration-200"
-                                >
-                                    {link.name}
-                                </Link>
-                                <svg
-                                    className="absolute -bottom-1 left-0 w-full h-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-                                    viewBox="0 0 100 8"
-                                    preserveAspectRatio="none"
-                                >
-                                    <path
-                                        d="M 0 4 Q 25 2, 50 4 T 100 4"
-                                        stroke="currentColor"
-                                        strokeWidth="2"
-                                        fill="none"
-                                        className="text-neutral-600"
-                                        strokeLinecap="round"
-                                    />
-                                </svg>
-                            </li>
-                        ))}
-                    </ul>
+                {/* Center Brand */}
+                <div className="flex items-center mx-4 gap-3 bg-neutral-900/50 px-4 py-1.5 rounded-full border border-white/5 hover:border-white/10 transition-colors group">
+                    <motion.img
+                        whileHover={{ rotate: 180 }}
+                        src="/logo.svg"
+                        alt="Logo"
+                        className="w-6 h-6"
+                    />
+                    <Link to="/" className="text-sm font-bold tracking-[0.2em] text-white">ARHAN</Link>
                 </div>
+
+                {/* Right Links */}
+                <ul className="flex items-center gap-1">
+                    {navLinks.slice(2).map((link, idx) => (
+                        <NavLink key={link.name} link={link} index={idx + 2} />
+                    ))}
+                </ul>
+
             </nav>
         </motion.div>
     );
 };
 
 export default Navbar;
+
